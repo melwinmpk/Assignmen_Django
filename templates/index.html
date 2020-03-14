@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+    <form action="name" method="post">
+        {% csrf_token %}
+<!--  > Full Name ,Phone number-->
+<!--  > Client Value(In USD)(This can be any monetary value in dummy data)-->
+<!--  > eMail , website address-->
+        <input type="text" name="name" placeholder="Full Name"><br>
+        <input type="text" name="phonenumber" placeholder="Phone number"><br>
+        <input type="text" name="cv" placeholder="Client Value(In USD) *"><br>
+        <input type="text" name="email" placeholder="eMail"><br>
+        <input type="text" name="websiteaddress" placeholder="website address"><br>
+        <input type="Submit" ><br>
+    </form>
+    <div>
+        {% for message in messages %}
+            <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
